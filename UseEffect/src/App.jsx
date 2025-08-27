@@ -104,17 +104,20 @@ const App = () => {
 
 
   useEffect(()=>{
+    setLoading(true)
     const fetchUser = async()=>{
-      setLoading(true)
+
+      await new Promise((resolve)=> setTimeout(resolve , 10000))
+      
       try {
         const respone = await fetch("https://jsonplaceholder.typicode.com/users")
         const data = await respone.json()
         console.log(data)
         setUser(data)
-        setLoading(false)
       }catch (error) {
         console.error(`THIS THE ERROR :${error}`)
       }
+
     }
     fetchUser()
   },[]);
@@ -134,3 +137,59 @@ if(loading) return <h1>Loading</h1>
 };
 
 export default App;
+// // import { useState } from "react";
+
+// const App = () => {
+//   const [user, setUser] = useState(null);
+//   const [loading, setLoading] = useState(false);
+//   const [query, setQuery] = useState("");
+
+//   const fetchData = async () => {
+//      // prevent empty fetch
+// if (!query) return;
+//     setLoading(true);
+//     try {
+//       await new Promise((resolve) => setTimeout(resolve, 1000)); // optional delay
+//       const response = await fetch(`https://api.github.com/users/${query}`);
+//       const data = await response.json();
+//       setUser(data);
+//       console.log(data);
+//     } catch (error) {
+//       console.error("Error fetching data:", error);
+//     } finally {
+//       setLoading(false);
+//     }
+//   };
+
+//   return (
+//     <div>
+//       <h1>Enter the Username:</h1>
+//       <input
+//         type="text"
+//         value={query}
+//         onChange={(e) => setQuery(e.target.value)}
+//       />
+//       <button onClick={fetchData}>Search</button>
+
+//       {loading && <p>Loading...</p>}
+
+//       {user && !user.message && (
+//         <div>
+//           <h1>{user.name}</h1>
+//           <img
+//             src={user.avatar_url}
+//             alt={user.name}
+//             style={{ borderRadius: "60px", width: "150px" }}
+//           />
+//           <h2>Location: {user.location || "N/A"}</h2>
+//           <h2>Following: {user.following}</h2>
+//           <p>Bio: {user.bio || "No bio available"}</p>
+//         </div>
+//       )}
+
+//       {user && user.message && <p>User not found</p>}
+//     </div>
+//   );
+// };
+
+// export default App;
