@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Greeting from "./greeting";
+import Notifications from "./nofication";
 
 // function App() {
 //   const ToDo = ["Apple" ,"Bannana" ,"Orange"];
@@ -24,11 +25,12 @@ import Greeting from "./greeting";
 // export default App;
 
 const App = ()=>{
-  const [isLoggedIn ,setIsLoggedin] = useState(true)
-
+  // const [isLoggedIn ,setIsLoggedin] = useState(true)
+    const [unreadMessages , setUnreadMessages] = useState(["React" , "Re: React"])
   return(
   
-       <Greeting isLoggedIn={isLoggedIn}/>
+      //  <Greeting isLoggedIn={isLoggedIn}/>
+      <Notifications unreadMessages={unreadMessages} />
     
   ) 
 }
