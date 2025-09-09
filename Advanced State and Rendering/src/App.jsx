@@ -1,6 +1,8 @@
 import { useState } from "react";
 import Greeting from "./greeting";
 import Notifications from "./nofication";
+import ToggleMessage from "./toggleMassege";
+
 
 // function App() {
 //   const ToDo = ["Apple" ,"Bannana" ,"Orange"];
@@ -24,14 +26,25 @@ import Notifications from "./nofication";
 // }
 // export default App;
 
-const App = ()=>{
-  // const [isLoggedIn ,setIsLoggedin] = useState(true)
-    const [unreadMessages , setUnreadMessages] = useState(["React" , "Re: React"])
-  return(
+// const App = ()=>{
+//   // const [isLoggedIn ,setIsLoggedin] = useState(true)
+//     const [unreadMessages , setUnreadMessages] = useState(["React" , "Re: React"])
+//   return(
   
-      //  <Greeting isLoggedIn={isLoggedIn}/>
-      <Notifications unreadMessages={unreadMessages} />
+//       //  <Greeting isLoggedIn={isLoggedIn}/>
+//       <Notifications unreadMessages={unreadMessages} />
     
-  ) 
+//   ) 
+// }
+// export default App;
+
+
+
+const App = ()=>{
+  return(
+    <div>
+        <ToggleMessage />
+    </div>
+  )
 }
 export default App;

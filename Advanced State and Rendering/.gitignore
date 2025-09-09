@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# in there my ssh key github and private one and the public one
+.README.md
