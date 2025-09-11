@@ -2,6 +2,7 @@ import { useState } from "react";
 import Greeting from "./greeting";
 import Notifications from "./nofication";
 import ToggleMessage from "./toggleMassege";
+import Button from "./Button"
 
 
 // function App() {
@@ -40,10 +41,29 @@ import ToggleMessage from "./toggleMassege";
 
 
 
+// const App = ()=>{
+//   return(
+//     <div>
+//         <ToggleMessage />
+//     </div>
+//   )
+// }
+// export default App;
+
+
 const App = ()=>{
-  return(
+
+  return (
+
     <div>
-        <ToggleMessage />
+    <Button id={1}/>
+    <Button id={2}/>
+    <Button id={3}/>
+    <Button id={4}/>
+    <Button id={5}/>
+    <Button id={6}/>
+    <Button id={7}/>
+    <Button id={8}/>
     </div>
   )
 }
