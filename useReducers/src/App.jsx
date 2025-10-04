@@ -1,11 +1,8 @@
-import Counter from "./Counter"
+import TodoApp from './TodoApp'
 
-const App = () => {
-
+function App() {
   return (
-    <div>
-      <Counter />
-    </div>
+    <TodoApp />   
   )
 }
 
