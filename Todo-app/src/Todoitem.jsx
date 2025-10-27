@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import TodoContext from "./TodoContext";
 
 export const Todoitem = ({ todo }) => {
-  const { dispatch } = useContext(TodoContext);
+  const {dispatch } = useContext(TodoContext);
   return (
     <li>
       <span
@@ -15,9 +15,11 @@ export const Todoitem = ({ todo }) => {
       >
         {todo.text}
       </span>
-      <button onClick={() => dispatch({ type: "Delete", payload: todo.id })}>
+      {
+        todo.completed && <button onClick={() => dispatch({ type: "Delete", payload: todo.id })}>
         Delete
       </button>
+      }
     </li>
   );
 };
