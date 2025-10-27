@@ -1,6 +1,7 @@
 import React from "react";
 import { useContext, useState } from "react";
 import TodoContext from "./TodoContext";
+import styles from './style/todoForm.module.css'
 
 export const TodoForm = () => {
   const [text, setText] = useState("");
@@ -18,14 +19,15 @@ export const TodoForm = () => {
         }
     }
   return (
-    <div>
+    <div className={styles.formContainer}>
       <input
         type="text"
         value={text}
         onChange={(e) => setText(e.target.value)}
         placeholder="Add New Todo"
+        className={styles.todoInput}
       />
-      <button onClick={HandleAdd}>Add</button>
+      <button onClick={HandleAdd} className={styles.todoBtn}>Add</button>
     </div>
   );
 };

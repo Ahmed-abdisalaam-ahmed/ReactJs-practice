@@ -1,10 +1,12 @@
 import React from 'react'
-import './app.css'
+import styles from './app.module.css'
+import Another from './Another'
 
 const App = () => {
   return (
-    <div className='App-Container'>
+    <div className={styles.appContainer}>
       <h1>hi</h1>
+      <Another/>
     </div>
   )
 }
