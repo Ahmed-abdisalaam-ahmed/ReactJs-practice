@@ -2,15 +2,17 @@ import React,{ useEffect, useState , useRef} from 'react'
 
 const Counter = () => {
 
-  const [count,setCount] = useState(0);
+  const [count,setCount] = useState(null);
 
-  const prevCounter = useRef(0)
+  const prevCounter = useRef(null)
 
   useEffect(()=>{
     prevCounter.current = count
   },[count])
 
   console.log("Previous Count:", prevCounter.current);
+
+  console.log("Current Count:", count);
 
 
   return (
