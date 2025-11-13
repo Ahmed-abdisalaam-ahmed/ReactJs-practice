@@ -42,7 +42,7 @@ const ValidForm = () => {
   };
 
   {
-    <p></p>
+   errors.username && <p>{errors.username}</p>
   }
 
   return (
