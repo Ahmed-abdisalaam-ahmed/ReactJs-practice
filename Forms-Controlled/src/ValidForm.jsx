@@ -1,38 +1,38 @@
 import React, { useState } from "react";
+import './index.css'
 
 const ValidForm = () => {
-
   const [formData, setFromData] = useState({
     username: "",
     email: "",
     password: "",
   });
-  const [errors , setErrors] = useState({})
+  const [errors, setErrors] = useState({});
 
-  const validate = ()=>{
+  const validate = () => {
     const error = {};
 
-    if(!formData.username.trim()){
-        error.username = "Username Required"
+    if (!formData.username.trim()) {
+      error.username = "Username Required";
     }
-    if(!formData.email){
-        error.email = "Email Required"
+    if (!formData.email) {
+      error.email = "Email Required";
     }
-    if(!formData.password){
-        error.password = "Password Required"
+    if (!formData.password) {
+      error.password = "Password Required";
     }
-  }
-
+    return error;
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
     const validationErrors = validate();
 
-    if((Object.keys (validationErrors)).length == 0 ){
-        console.log("success")
-    }
-    else{
-        setErrors(validationErrors);
+    if (Object.keys(validationErrors).length == 0) {
+      console.log("success");
+    } else {
+      setErrors(validationErrors);
     }
     console.log(formData);
   };
@@ -40,10 +40,6 @@ const ValidForm = () => {
     const { name, value } = e.target;
     setFromData((prevData) => ({ ...prevData, [name]: value }));
   };
-
-  {
-   errors.username && <p>{errors.username}</p>
-  }
 
   return (
     <div>
@@ -55,6 +51,8 @@ const ValidForm = () => {
           value={formData.username}
           onChange={handleChange}
         />
+        <br />
+        {errors.username && <p className="error">{errors.username}</p>}
         <input
           type="text"
           name="email"
@@ -62,6 +60,8 @@ const ValidForm = () => {
           value={formData.email}
           onChange={handleChange}
         />
+        <br />
+        {errors.email && <p className="error">{errors.email}</p>}
         <input
           type="text"
           name="password"
@@ -69,7 +69,7 @@ const ValidForm = () => {
           value={formData.password}
           onChange={handleChange}
         />
-
+        {errors.password && <p className="error">{errors.password}</p>}
         <button type="submit">Submit</button>
       </form>
     </div>
