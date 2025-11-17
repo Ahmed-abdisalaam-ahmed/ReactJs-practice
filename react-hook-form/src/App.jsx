@@ -50,7 +50,7 @@ const App = () => {
           <label>Confrim Password</label>
           <input
             type="password"
-            {...register("confirmPassword", { required: "ConfirmPassword is Required ", validate : (value)=> value === password ||  "Password Don't match "})}
+            {...register("confirmPassword", { required: "ConfirmPassword is Required ", validate : (value)=> value === Password ||  "Password Don't match "})}
           />
           {errors.confirmPassword && (
             <p style={{ color: "red" }}>{errors.confirmPassword.message}</p>
