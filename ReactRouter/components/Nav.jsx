@@ -34,7 +34,7 @@ const Nav = () => {
           </NavLink>
           <NavLink
             className={({ isActive }) =>
-              isActive ? "font-bold  text-green-400" : undefined
+              isActive ? "font-bold  text-purple-400" : undefined
             }
             to="/Users"
           >

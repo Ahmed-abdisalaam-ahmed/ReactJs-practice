@@ -7,6 +7,7 @@ import NotFound from "../components/NotFound";
 import Context from "./pages/Context";
 import UserList from "./pages/UserList";
 import UserProfile from "./pages/UserProfile";
+import ProductDetails from "./pages/ProductDetails";
 
 
 const router = createBrowserRouter([
@@ -34,7 +35,15 @@ const router = createBrowserRouter([
       {
         path: "users/:userId",
         element: <UserProfile />,
-      }
+      },
+      {
+        path: "products/:categoryId/:productId",
+        element: <ProductDetails />,
+      },
+      {
+        path: "products/:categoryId",
+        element: <ProductDetails />,
+      },
     ],
   },
 ]);
