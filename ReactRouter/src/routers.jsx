@@ -8,17 +8,19 @@ import Context from "./pages/Context";
 import UserList from "./pages/UserList";
 import UserProfile from "./pages/UserProfile";
 import ProductDetails from "./pages/ProductDetails";
-
+import Overview from "../components/Overview";
+import DashboardDetails from "../components/DashboardDetails";
+import Settings from "../components/Settings";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App/>,
-    errorElement: <NotFound/>,
+    element: <App />,
+    errorElement: <NotFound />,
     children: [
       {
         index: true,
-        element: <Home/>,
+        element: <Home />,
       },
       {
         path: "about",
@@ -43,6 +45,20 @@ const router = createBrowserRouter([
       {
         path: "products/:categoryId",
         element: <ProductDetails />,
+      },
+      {
+        path: "dashboard",
+        element: <DashboardDetails/>,
+        children: [
+          {
+            index: true,
+            element: <Overview />,
+          },
+          {
+            path: "settings",
+            element: <Settings />,
+          },
+        ],
       },
     ],
   },

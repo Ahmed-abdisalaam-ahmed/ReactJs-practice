@@ -40,6 +40,14 @@ const Nav = () => {
           >
             Users
           </NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? "font-bold  text-purple-400" : undefined
+            }
+            to="/dashboard"
+          >
+            dashboard
+          </NavLink>
         </nav>
       </header>
     </div>
