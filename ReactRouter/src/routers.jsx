@@ -5,6 +5,8 @@ import Home from "./pages/Home";
 import App from "./App";
 import NotFound from "../components/NotFound";
 import Context from "./pages/Context";
+import UserList from "./pages/UserList";
+import UserProfile from "./pages/UserProfile";
 
 
 const router = createBrowserRouter([
@@ -24,6 +26,14 @@ const router = createBrowserRouter([
       {
         path: "context",
         element: <Context />,
+      },
+      {
+        path: "users",
+        element: <UserList />,
+      },
+      {
+        path: "users/:userId",
+        element: <UserProfile />,
       }
     ],
   },
