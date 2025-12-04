@@ -10,7 +10,9 @@ export const Routers = createBrowserRouter([
         children:[
             {
                 path: "dashboard",
-                element: <Dashboard/>
+                element: (
+                    <ProtectedRouter element={<Dashboard/>}/>
+                )
             },
             {
                 path:"login",
