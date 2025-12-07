@@ -3,6 +3,7 @@ import App from "./App";
 import Dashboard from "./Dashboard";
 import Login from "./Login";
 import ProtectedRouter from "./ProtectedRouter";
+import Courses from "./Courses";
 
 
 export const Routers = createBrowserRouter([
@@ -15,6 +16,11 @@ export const Routers = createBrowserRouter([
                 element: (
                     <ProtectedRouter element={<Dashboard/>}/>
                 )
+            },
+            {
+                path:"courses",
+                element: <Courses/>
+                
             },
             {
                 path:"login",
